@@ -1,0 +1,13 @@
+username,ih,ns,gh,mw,sum,diagnosis,mean_average,standard_deviation,variance,balanced
+user1,2,2,2,2,8,sick,2,"0,00","0,00",TRUE
+user2,3,4,2,3,12,sick,3,"0,82","0,67",TRUE
+user3,2,4,0,1,7,sick,"1,75","1,71","2,92",FALSE
+user4,1,4,2,1,8,sick,2,"1,41","2,00",FALSE
+user5,4,5,4,6,19,normal,"4,75","0,96","0,92",TRUE
+user6,5,6,4,6,21,normal,"5,25","0,96","0,92",TRUE
+user7,4,6,5,7,22,normal,"5,5","1,29","1,67",FALSE
+user8,7,6,3,7,23,normal,"5,75","1,89","3,58",FALSE
+user9,8,7,7,9,31,healthy,"7,75","0,96","0,92",TRUE
+user10,8,9,8,8,33,healthy,"8,25","0,50","0,25",TRUE
+user11,12,8,10,9,39,healthy,"9,75","1,71","2,92",FALSE
+user12,14,9,13,7,43,healthy,"10,75","3,30","10,92",FALSE
