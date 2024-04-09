@@ -1,4 +1,4 @@
-package products;
+package dev.products;
 
 import java.util.List;
 import java.util.Optional;
