@@ -6,14 +6,8 @@ import java.util.List;
 
 public class CalculateUserBalance {
     public static boolean calculateBalance(User_Persona user_persona){
-        int[] userValues = {
-                user_persona.getUserNutritionalValues().getImmuneHealth(),
-        user_persona.getUserNutritionalValues().getNutritionalStatus(),
-        user_persona.getUserNutritionalValues().getGutHealth(),
-        user_persona.getUserNutritionalValues().getMentalWellness()};
 
-        double meanAverage = calculateMeanAverage(userValues);
-        double variance = calculateVariance(userValues, meanAverage);
+        double variance = getVariance(user_persona);
         double standardDeviation = calculateStandardDeviation(variance);
 
         // for now, we will calculate balance based on variance, although std is easier to read as it is in same units as data set
@@ -22,18 +16,27 @@ public class CalculateUserBalance {
         if (variance <= 1.5){
             return true;
         } else return false;
+    }
 
+    private static double getVariance(User_Persona user_persona) {
+        int[] userValues = {
+                user_persona.getUserNutritionalValues().getImmuneHealth(),
+                user_persona.getUserNutritionalValues().getNutritionalStatus(),
+                user_persona.getUserNutritionalValues().getGutHealth(),
+                user_persona.getUserNutritionalValues().getMentalWellness()
+        };
 
+        double meanAverage = calculateMeanAverage(userValues);
+        return calculateVariance(userValues, meanAverage);
     }
 
     private static double calculateMeanAverage(int[] userValues){
-        // The mean average
-        double mean = 0.0;
+        double average = 0.0;
         for (int i = 0; i < userValues.length; i++) {
-            mean += userValues[i];
+            average += userValues[i];
         }
-        mean /= userValues.length;
-        return mean;
+        average /= userValues.length;
+        return average;
     }
     private static double calculateVariance(int[] userValues, double mean){
         double variance = 0;
