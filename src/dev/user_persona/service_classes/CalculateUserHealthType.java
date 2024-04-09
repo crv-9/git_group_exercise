@@ -19,13 +19,11 @@ public class CalculateUserHealthType {
 
         int valuesSum = ih + ns + gh + mw;
 
-        
         if (valuesSum >= minValueNormal && valuesSum < minValueHealthy){
             return "normal";
         } else if (valuesSum >= minValueHealthy) {
             return "healthy";
         } else return "sick";
-
 
     }
 }

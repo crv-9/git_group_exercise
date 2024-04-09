@@ -8,7 +8,8 @@ public class User_Persona {
     String userHealthType; // Sick, Normal, Healthy -- This will be calculated
     NutritionalValues userNutritionalValues; // [IH, NS, GH, MW] -- this will receive the values from the profile,
     List<Map.Entry<String, Integer>> sortedNutritionalValues; // values sorted from lowest to highest
-    boolean isBalanced; // true/false -- this will be defined by the variance from values in NutritionalValues
+    boolean isBalanced; // this will be defined by the variance from values in NutritionalValues
+    String healthFocus; // this will be a String with the result of what we will focus on for this user
 
 
     // constructors
@@ -16,6 +17,14 @@ public class User_Persona {
         this.userHealthType = userHealthType;
         this.userNutritionalValues = userNutritionalValues;
         this.isBalanced = isBalanced;
+    }
+
+    public User_Persona(String userHealthType, NutritionalValues userNutritionalValues, List<Map.Entry<String, Integer>> sortedNutritionalValues, boolean isBalanced, String healthFocus) {
+        this.userHealthType = userHealthType;
+        this.userNutritionalValues = userNutritionalValues;
+        this.sortedNutritionalValues = sortedNutritionalValues;
+        this.isBalanced = isBalanced;
+        this.healthFocus = healthFocus;
     }
 
     public User_Persona(NutritionalValues userNutritionalValues) {
@@ -38,6 +47,10 @@ public class User_Persona {
         return isBalanced;
     }
 
+    public String getHealthFocus() {
+        return healthFocus;
+    }
+
     // setters
 
 
@@ -51,9 +64,12 @@ public class User_Persona {
     public void setSortedNutritionalValues(List<Map.Entry<String, Integer>> sortedNutritionalValues) {
         this.sortedNutritionalValues = sortedNutritionalValues;
     }
-
     public void setBalanced(boolean balanced) {
         isBalanced = balanced;
+    }
+
+    public void setHealthFocus(String healthFocus) {
+        this.healthFocus = healthFocus;
     }
 
     // equals and hashcode

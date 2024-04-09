@@ -32,6 +32,7 @@ public class OrganizeNutritionalValuesTest {
         );
 
         assertEquals(expected, result);
-
     }
+
+
 }

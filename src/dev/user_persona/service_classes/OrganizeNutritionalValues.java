@@ -21,5 +21,4 @@ public class OrganizeNutritionalValues {
                 .sorted(Map.Entry.comparingByValue())
                 .toList();
     }
-
 }
