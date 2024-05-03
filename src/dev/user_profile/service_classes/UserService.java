@@ -1,7 +1,10 @@
 package dev.user_profile.service_classes;
 
 
+    import dev.questionnaire.Questionnaire;
     import dev.user_profile.data_classes.User;
+
+    import java.io.IOException;
     import java.util.Scanner;
     import java.util.Map;
     import java.util.HashMap;
@@ -54,6 +57,11 @@ package dev.user_profile.service_classes;
             User user = userService.createUserFromMap(userData);
             
             System.out.println("User created successfully with ID: " + user.getIdNumber());
+        }
+
+        public static void runQuestionnaire(User user)throws IOException {
+            Questionnaire questionnaire = new Questionnaire();
+            questionnaire.runQuestionnaire();
         }
     }
     

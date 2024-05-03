@@ -1,15 +1,20 @@
 package dev.user_profile.data_classes;
 
+import java.util.Map;
+
 public class User {
     private static int idCounter = 1000; //this will keep track of the ID
 
-private final int idNumber; // Unique ID for each instence
+private final int idNumber; // Unique ID for each instance
     private String name;
     private int  age;
     private String email;
     private double weight;
     private double height;
-    private String password; // Can be hashed 
+    private String password; // Can be hashed
+    Map<String, Integer> nutriValuesSummaryMap;
+    Map<String, String> questionsAnswersSummaryMap;
+
 
     public User(String name, int age, String email, String password, double weight, double height) {
         this.idNumber = getNextID(); // Assign a unique ID to this instance
