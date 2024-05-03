@@ -1,14 +1,19 @@
 package dev.questionnaire;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import dev.questionnaire.data_classes.UserQComplete;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.*;
 
 public class Questionnaire {
+    // to build the questionnaire
+    FileReader reader = new FileReader();
+    String fileString = "src/dev/questionnaire/files/Supp_Buddy_questions-input.csv";
+    Path filePath = Path.of(fileString);
     Parser parser = new Parser();
 
-    // this class will call all question classes and host all question answers
+    // this class will call all question classes and collect all question answers to add into user
 
     // this map will have the total sum of the nutriValues per nutriArea
     Map<String, Integer> nutriValuesSummaryMap = new HashMap<>(Map.of(
@@ -22,15 +27,21 @@ public class Questionnaire {
     // this will later be used to show it in user's profile.
     Map<String, String> questionAnswersSummaryMap = new HashMap<>();
 
-    // after I run the questionnaire I want to have
-    // the nutriValues summary
-    // the map of each question and answer
+    String userInputName;
 
-    public List<Map<?,?>> runQuestionnaire(List<String> fileLines) {
+    // when I run the questionnaire I'll get a user with all the values inside.
+
+    public UserQComplete runQuestionnaire() throws IOException {
+
+        List<String> fileLines = reader.readLines(filePath);
         List<Question> questionsList = buildQuestionnaire(fileLines);
 
-        // this ? wildcard helps us create a list with maps that have different data types inside each map
-        List<Map<?, ?>> finalAnswersList = new ArrayList<>();
+
+        // intro + ask name + create UserQComplete
+        System.out.println("Welcome to Supp Buddy! Let's get to know you a bit better :)");
+        UserQComplete user = new UserQComplete(askName());
+        userInputName = user.getUsername();
+
         for (Question question: questionsList) {
 
             question.askQuestion();
@@ -44,10 +55,10 @@ public class Questionnaire {
             nutriValuesSummaryMap.replace("mw",nutriValuesSummaryMap.get("mw") + answer.get("mw"));
         }
 
-        finalAnswersList.add(getFinalAnswers());
-        finalAnswersList.add(getFinalNutriValues());
+        user.setQuestionsAnswersSummaryMap(getFinalAnswers());
+        user.setNutriValuesSummaryMap(getFinalNutriValues());
 
-        return finalAnswersList;
+        return user;
     }
 
     public Map<String, Integer> getFinalNutriValues(){
@@ -59,6 +70,13 @@ public class Questionnaire {
     }
 
     // I want to read the csv with the questions and answers to build the questionnaire and run it
+
+    private String askName(){
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("What's your name?");
+        return userInput.nextLine();
+    }
+
     private List<Question> buildQuestionnaire(List<String> fileLines){
         // skipping first line as it only has the csv structure
 
