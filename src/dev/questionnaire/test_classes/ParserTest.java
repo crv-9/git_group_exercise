@@ -1,13 +1,12 @@
 package dev.questionnaire.test_classes;
 
 import dev.questionnaire.Parser;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
 
 public class ParserTest {
     Parser parser = new Parser();
