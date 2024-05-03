@@ -21,6 +21,6 @@ public class Application {
         for (Map<?,?> map: answersMapsList) {
             System.out.println(map);
         }
-        
+
     }
 }
