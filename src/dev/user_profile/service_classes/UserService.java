@@ -47,7 +47,6 @@ package dev.user_profile.service_classes;
             String password = userData.get("Password");
             double weight = Double.parseDouble(userData.get("Weight"));
             double height = Double.parseDouble(userData.get("Height"));
-    
             return new User(name, age, email, password, weight, height);
         }
     
