@@ -1,8 +1,5 @@
 package dev.user_profile;
 
 class Application{
-    public static void main(arg[]{
-        
-    })
 
 }
