@@ -22,6 +22,8 @@ public class User {
 
 // CONSTRUCTORS
 
+
+    // create user only with ID
     public User(int idNumber) {
         this.idNumber = idNumber;
     }
@@ -64,9 +66,30 @@ public class User {
         this.areProductsRecommended = areProductsRecommended;
     }
 
-    // create user with ID, booleans, all userData, questionnaire maps and productRecommendations
+    // create user with ID, booleans and questionnaire maps
 
+    public User(int idNumber, boolean isDataGathered, boolean isQuestionnaireComplete, Map<String, Integer> nutriValuesSummaryMap, Map<String, String> questionsAnswersSummaryMap, boolean areProductsRecommended) {
+        this.idNumber = idNumber;
+        this.isDataGathered = isDataGathered;
+        this.isQuestionnaireComplete = isQuestionnaireComplete;
+        this.nutriValuesSummaryMap = nutriValuesSummaryMap;
+        this.questionsAnswersSummaryMap = questionsAnswersSummaryMap;
+        this.areProductsRecommended = areProductsRecommended;
+    }
 
+    // create user with ID, booleans and questionnaire maps
+
+    public User(int idNumber, boolean isDataGathered, boolean isQuestionnaireComplete, Map<String, Integer> nutriValuesSummaryMap, Map<String, String> questionsAnswersSummaryMap, boolean areProductsRecommended, List<String> recommendedProductList) {
+        this.idNumber = idNumber;
+        this.isDataGathered = isDataGathered;
+        this.isQuestionnaireComplete = isQuestionnaireComplete;
+        this.nutriValuesSummaryMap = nutriValuesSummaryMap;
+        this.questionsAnswersSummaryMap = questionsAnswersSummaryMap;
+        this.areProductsRecommended = areProductsRecommended;
+        this.recommendedProductList = recommendedProductList;
+    }
+
+    //  Full User - create user with ID, booleans, all userData, questionnaire maps and productRecommendations
     public User(int idNumber, boolean isDataGathered, String name, int age, String email, String password, double weight, double height, boolean isQuestionnaireComplete, Map<String, Integer> nutriValuesSummaryMap, Map<String, String> questionsAnswersSummaryMap, boolean areProductsRecommended, List<String> recommendedProductList) {
         this.idNumber = idNumber;
         this.isDataGathered = isDataGathered;
