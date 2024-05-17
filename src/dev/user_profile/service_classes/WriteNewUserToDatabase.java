@@ -17,7 +17,7 @@ public class WriteNewUserToDatabase {
 
         String dataBaseRootPath = "src/dev/supp_buddy_database.csv";
         Path path = Path.of(dataBaseRootPath);
-        Files.write(List.of(path, List.of(user.toString()));
+       // Files.write(List.of(path, List.of(user.toString()));
         // Working on it 
         
     }
