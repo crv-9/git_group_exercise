@@ -1,2 +1,2 @@
 idNumber,isDataGathered,name,age,email,password,weight,height,isQuestionnaireComplete,nutriValuesSummaryMap,questionsAnswersSummaryMap,areProductsRecommended,recommendedProductList
-String,boolean,String,int,String,String,double,double,boolean,"Map<String, Integer>","Map<String, String>",boolean,List<String>
+int,boolean,String,int,String,String,double,double,boolean,"Map<String, Integer>","Map<String, String>",boolean,List<String>
