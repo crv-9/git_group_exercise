@@ -20,6 +20,7 @@ public class UserCreatorTest {
         Optional<User> result = userCreator.createUser(array);
 
         System.out.println(result.get().getNutriValuesSummaryMap());
+        System.out.println(result.get().isDataGathered());
 
     }
 
