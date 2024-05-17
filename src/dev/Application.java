@@ -32,11 +32,18 @@ public class Application {
                 System.out.println("Do you want to rnter Personal Data or skip to questionnaire? (write skip/ countie");
                 String skipOrNot = scanner.nextLine();
                 if (skipOrNot.equalsIgnoreCase("countie")){
+
+
                     UserService userService = new UserService();
+
+
                     User user = userService.createUserFromMap(userService.gatherUserData());
+
+
 
                         //Parser need it here to store user in the Database;
                 } else  {
+
 
                     // Run questionnaire
 

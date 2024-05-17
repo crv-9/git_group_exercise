@@ -24,7 +24,12 @@ private final int idNumber; // Unique ID for each instance
         this.weight = weight;
         this.height = height;
     }
-     // Static method to increment and return the next ID
+
+    public User() {
+        this.idNumber = getNextID();
+    }
+
+    // Static method to increment and return the next ID
      private static synchronized int getNextID() {
         return ++idCounter;
     }
@@ -66,5 +71,18 @@ public void setWeight(double weight) {
 } 
 public void setPassword(String password) {
     this.password = password;
-}   
+}
+
+
+    public String toString(boolean isDataGathered, boolean isQuestionnaireComplete) {
+        return idNumber +
+                ";" + name +
+                ";" + age +
+                ";" + email +
+                ";" + weight +
+                ";" + height +
+                ";" + password +
+                ";" + nutriValuesSummaryMap +
+                ";" + questionsAnswersSummaryMap ;
+    }
 }
