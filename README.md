@@ -11,6 +11,12 @@
 
   SuppBuddy was created in otder to help choosing the right supplements specifically tailored to your needs.
 
+  How does it work? 
+  -------------------
+
+  User completes a 15-question questionnaire. We use their answers to create a user persona, where we calculate the user's nutritional values. With this information, we are able to recommend tailored products from our listed products. 
+
+
   Who created it?
   ----------------
 
